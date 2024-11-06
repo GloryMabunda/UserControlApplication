@@ -1,0 +1,6 @@
+@UserControlAPI_HostAddress = http://localhost:5014
+
+GET {{UserControlAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
