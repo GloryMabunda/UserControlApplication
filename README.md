@@ -10,8 +10,7 @@ This project is a User Management System built with .NET Core. It allows adminis
 - **Web Interface**: User interface built with ASP .NET MVC to interact with the API.
 
 ## Technologies Used
-![.NET Core](https://img.shields.io/badge/.NET%20Core-6.0-blue) 
-![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-6.0-blue) 
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-8.0-purple) 
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-2019-red) 
 ![Swagger](https://img.shields.io/badge/Swagger-API%20Docs-green) 
 ![Razor Pages](https://img.shields.io/badge/Razor%20Pages-MVC-orange)
