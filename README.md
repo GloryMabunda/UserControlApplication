@@ -4,8 +4,8 @@ This project is a User Management System built with .NET Core. It allows adminis
 
 ## Features
 - **User Management**: Add, update, delete users.
-- **Group Management**: Organize users into groups.
-- **Permissions**: Assign permissions to groups and users.
+- ~~**Group Management**: Organize users into groups.~~
+- ~~**Permissions**: Assign permissions to groups and users.~~
 - **API Endpoints**: Developed using ASP.NET Core Web API.
 - **Web Interface**: User interface built with ASP .NET MVC to interact with the API.
 
@@ -17,5 +17,5 @@ This project is a User Management System built with .NET Core. It allows adminis
 
 ### How to Use
 1. Clone the repository and set up the database with the provided SQL scripts.
-2. Start the API project (`UserControlApi`) and the web interface project (`UserControlClient`).
+2. Set up multiple startup projects, to start both the API project (`UserControlApi`) and the web interface project (`UserControlClient`).
 3. Use Swagger or the web interface to interact with the API.
