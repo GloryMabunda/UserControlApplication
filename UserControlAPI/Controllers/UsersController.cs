@@ -6,7 +6,7 @@ using UserControlAPI.Models;
 namespace UserControlAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("/api/[controller]")]
     public class UsersController : ControllerBase
     {
         private readonly DBService _service;
@@ -15,38 +15,50 @@ namespace UserControlAPI.Controllers
             _service = service;
         }
 
+
+        [HttpGet("GetUserCount")]
+        //GET: api/Users
+        public async Task<ActionResult<int>> GetUserCount()
+        {
+            var data = await _service.GetUsers(null);
+            if (data == null)
+                return NotFound();
+            else
+                return data.Count();
+        }
+
         // GET: api/Users
         [HttpGet]
         public async Task<ActionResult<List<Users>>> GetUsers()
         {
-            var user = await _service.GetUsers(null);
-            if (user == null)
+            var data = await _service.GetUsers(null);
+            if (data == null)
                 return NotFound();
             else
-                return Ok(user.FirstOrDefault());
+                return data;
         }
-
+        
         // GET: api/Users/5]
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetUser(int id)
+        public async Task<ActionResult<Users>> GetUser(int id)
         {
-            var user = await _service.GetUsers(userid: id);
-            if (user == null)
+            var data = await _service.GetUsers(userid: id);
+            if (data == null)
                 return NotFound();
             else
-                return Ok(user.FirstOrDefault());
+                return data.FirstOrDefault();
         }
 
-            // Post: api/Users
-            [HttpPost]
-            public async Task<ActionResult> AddUser(Users user) 
-            {
-               if(user == null)
-                    return BadRequest("Error occured while saving user details");
+        // Post: api/Users
+        [HttpPost]
+        public async Task<ActionResult> AddUser(Users user) 
+        {
+            if(user == null)
+                return BadRequest("Error occured while saving user details");
 
-               var x = await _service.AddUser(user);
-               return x ? Ok("User saved successfully") : BadRequest("Error occured while saving user details");
-            }
+            var x = await _service.AddUser(user);
+            return x ? Ok("User saved successfully") : BadRequest("Error occured while saving user details");
+        }
 
         // Put: api/Users
         [HttpPut]
@@ -66,5 +78,31 @@ namespace UserControlAPI.Controllers
             var x = await _service.DeleteUser(id);
             return x ? Ok("User deleted") : BadRequest("Error occured while updating user details");
         }
+
+        #region Group Permissions
+        [HttpGet("GetGroupPermissions")]
+        //GET: api/Users
+        public async Task<ActionResult<List<GroupPermissions>>> GetGroupPermissions()
+        {
+            var data = await _service.GetGroupPermissions(null);
+            if (data == null)
+                return NotFound();
+            else
+                return data;
+        }
+        #endregion
+
+        #region Groups
+        [HttpGet("GetGroups")]
+        //GET: api/Users
+        public async Task<ActionResult<List<Groups>>> GetGroups()
+        {
+            var data = await _service.GetGroups(null);
+            if (data == null)
+                return NotFound();
+            else
+                return data;
+        }
+        #endregion
     }
 }

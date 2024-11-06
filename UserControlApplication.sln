@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserControlAPI", "UserContr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserControlClient", "UserControlClient\UserControlClient.csproj", "{3A73D90E-CA20-495B-B4A2-66C99FF5FDF2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLScripts", "SQLScripts", "{448E2BC0-A6AF-457E-B912-F800832524BA}"
+	ProjectSection(SolutionItems) = preProject
+		..\Create_UserControlDB_Objects.sql = ..\Create_UserControlDB_Objects.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
