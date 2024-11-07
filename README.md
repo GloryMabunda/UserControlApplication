@@ -16,6 +16,6 @@ This project is a User Management System built with .NET Core. It allows adminis
 ![Razor Pages](https://img.shields.io/badge/Razor%20Pages-MVC-orange)
 
 ### How to Use
-1. Clone the repository and set up the database with the provided SQL scripts.
+1. Clone the repository and set up the database with the provided script in the SQLScripts folder.
 2. Set up multiple startup projects, to start both the API project (`UserControlApi`) and the web interface project (`UserControlClient`).
 3. Use Swagger or the web interface to interact with the API.
